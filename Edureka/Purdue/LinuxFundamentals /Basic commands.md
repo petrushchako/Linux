@@ -12,6 +12,12 @@
 |touch|Create a file|touch **[filename]** |
 |mkdir|Create Directory|mkdir **[options] [directory name]** |
 |rm|Remove file|rm **[option] [filename]** |
+|grep|grep <option><pattern><filename>|grep "hello" file.txt|
+|sed|sed 's/{valueToReplace}/{valueToinsert}' <fileName.ext>|sed 's/concatenate/sed/' cattestfile.txt|
+|history|history -n/-c/|grep history n-number of lines to display, c-clear history|
+
+
+
 
 
 ### Basic Command Line Editing
