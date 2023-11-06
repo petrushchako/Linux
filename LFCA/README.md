@@ -14,3 +14,23 @@ The sections are as follows:
 
 
 Once you've completed this course, you will have greater knowledge in several different IT-related fields and will be prepared to sit and pass the LFCA exam. So, if you are ready to get started, I will see you in the course!
+
+
+
+### Exam Formatting and Information
+* Exam duration (90 minutes)
+* 60 multiple choice questions
+* Proctored online
+* Results are emailed within 24 hrs.
+* View the Linux Foundation website for system requirements
+* Includes one retake
+* Valid for three years
+* No prerequisites
+
+### Domains and Competencies
+* Linux Fundamentals **(20%)**
+* System Administration Fundamentals **(20%)**
+* Cloud Computing Fundamentals **(20%)**
+* Security Fundamentals **(16%)**
+* DevOps Fundamentals **(16%)**
+* Supporting Applications and Developers **(8%)**
