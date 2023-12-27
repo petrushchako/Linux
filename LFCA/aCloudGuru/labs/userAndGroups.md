@@ -10,3 +10,7 @@
 and its contents to "**devops**" using `chgrp`
 - Use octal mode permissions to update files and directories with `chmod`
 - Use symbolic mode permissions to update files and directories with `chmod`
+
+## Removing Users and Groups
+- Remove the users "**benedict**" and "**arnold**" with `userdel`
+- Remove the group "**test**" with `groupdel`
