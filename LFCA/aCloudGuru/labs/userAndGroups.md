@@ -4,6 +4,22 @@
 - Create the users "sam" and "steve" with `useradd`
 - Modify the users "john" and "sally" with `usermod`
 
+```bash
+groupadd -g 1301 qa
+groupmod -n devops dev
+cat /etc/group
+
+useradd -M -G qa, devops sam
+id sam
+
+useradd -u 1250 -g qa steve
+id steve
+
+usermod -d /home/associate -g qa john
+usermod -u 1255 -G qa sally
+cat /etc/passwd
+```
+
 ## Working with Ownership and Permissions
 - Change the owner and group of `/usr/local/share/staging` and all its contents to "**sally**" and "**qa**" using `chown`
 - Change the group of `/usr/local/share/production`
