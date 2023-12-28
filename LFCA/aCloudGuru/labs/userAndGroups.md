@@ -9,7 +9,7 @@ groupadd -g 1301 qa
 groupmod -n devops dev
 cat /etc/group
 
-useradd -M -G qa, devops sam
+useradd -M -G qa,devops sam
 id sam
 
 useradd -u 1250 -g qa steve
