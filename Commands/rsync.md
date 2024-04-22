@@ -18,3 +18,17 @@
 - `-e, --rsh=COMMAND`: Specifies the remote shell to use for communication.
 - `--delete`: Deletes files on the destination that are not present on the source, keeping them in sync.
 
+## Example:
+To synchronize files from a local directory to a remote server:
+
+
+`rsync -avz /path/to/local/directory/ user@remote_host:/path/to/destination/`
+
+
+
+## Usage:
+1. Ensure that `rsync` is installed on both the local and remote systems.
+2. Use the appropriate options to configure the synchronization process according to your requirements.
+3. Specify the source and destination paths, ensuring correct permissions and connectivity.
+4. Run the `rsync` command, and monitor the output for any errors or warnings.
+5. Once synchronization is complete, verify that the files and directories are correctly transferred and updated on the destination.
