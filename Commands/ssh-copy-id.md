@@ -1,4 +1,4 @@
-# SSH-COPY-ID COMMAND
+# `ssh-copy-id`
 
 ## Description:
 `ssh-copy-id` is a command-line utility that simplifies the process of securely copying a user's public SSH key to a remote server's authorized_keys file. This enables passwordless authentication for SSH connections, improving security and convenience.
