@@ -32,3 +32,8 @@ To synchronize files from a local directory to a remote server:
 3. Specify the source and destination paths, ensuring correct permissions and connectivity.
 4. Run the `rsync` command, and monitor the output for any errors or warnings.
 5. Once synchronization is complete, verify that the files and directories are correctly transferred and updated on the destination.
+
+## Notes:
+- `rsync` can work over SSH by specifying the remote shell using the `-e` option, providing secure data transfer.
+- Be cautious when using options such as `--delete`, as they can result in data loss if misconfigured.
+- It's recommended to test `rsync` commands with the `--dry-run` option before performing actual synchronization to avoid unintended consequences.
