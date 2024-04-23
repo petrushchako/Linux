@@ -22,3 +22,23 @@
 - `-d, --diff`: Find differences between an archive and the filesystem.
 - `-p, --preserve-permissions`: Preserve file permissions when extracting files from an archive.
 
+## Example:
+1. To create a tar archive of a directory:
+
+    `tar -cvf archive.tar directory/`
+
+2. To extract files from a tar archive:
+
+    `tar -xvf archive.tar`
+
+3. To create a compressed tar archive using gzip:
+
+    `tar -czvf archive.tar.gz directory/`
+
+
+## Usage:
+1. Use the appropriate options to specify the desired operation (create, extract, compress, etc.).
+2. Provide the filename of the archive using the `-f` option.
+3. Specify the files or directories to be included in the archive.
+4. Run the `tar` command, and monitor the output for any errors or warnings.
+5. Depending on the operation, files will be archived, extracted, or listed accordingly.
