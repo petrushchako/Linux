@@ -20,3 +20,25 @@
 - `-A NUM, --after-context=NUM`: Print NUM lines of trailing context after matching lines.
 - `-B NUM, --before-context=NUM`: Print NUM lines of leading context before matching lines.
 
+## Example:
+To search for the word "example" in a file:
+
+`grep "example" file.txt`
+
+
+To search for the word "error" in all `.log` files within the current directory and its subdirectories:
+
+`grep -r "error" *.log`
+
+
+## Usage:
+1. Provide the pattern to search for.
+2. Specify any options to customize the search behavior.
+3. Optionally, provide one or more filenames or use wildcard characters to specify files.
+4. Run the `grep` command, and review the output for matching lines.
+
+## Notes:
+- `grep` supports both basic and extended regular expressions for pattern matching.
+- Use the `-i` option for case-insensitive searches.
+- Combine `grep` with other commands using pipes (`|`) for more complex text processing tasks.
+- Be cautious when using recursive searches (`-r` option) on large directory structures, as it can take some time to complete.
