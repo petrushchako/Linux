@@ -25,3 +25,13 @@ The mode parameter consists of three parts:
 - The first character specifies the target of the permissions modification (e.g., "u" for user).
 - The following characters indicate the operation (+, -, or =) and the permissions to be modified (r, w, or x).
 - Multiple operations and permissions can be combined, separated by commas (e.g., "u+x,g-w,o=r").
+
+## Example:
+1. To give read and write permissions to the owner and group for a file:
+
+    `chmod ug+rw file.txt`
+
+2. To remove execute permission from all users for a directory and its contents recursively:
+
+    `chmod -R a-x directory/`
+
