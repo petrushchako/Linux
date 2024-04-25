@@ -35,3 +35,14 @@ The mode parameter consists of three parts:
 
     `chmod -R a-x directory/`
 
+
+## Usage:
+1. Specify the permissions to be changed using the mode parameter.
+2. Optionally, specify the files or directories whose permissions should be modified.
+3. Run the `chmod` command, and verify the permissions using `ls -l` or similar commands.
+4. Use options like `-v` or `-c` for additional feedback on the changes made.
+
+## Notes:
+- Be cautious when modifying permissions, as incorrect settings can lead to security vulnerabilities or unexpected behavior.
+- Use the `chmod` command responsibly, ensuring that files and directories are accessible only to authorized users.
+- Regularly review and update permissions to maintain the security of your system and data.
