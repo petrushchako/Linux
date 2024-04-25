@@ -27,3 +27,13 @@
 - `g`: Global command, applies the command to all matches in the pattern space.
 - `w`: Write command, writes the pattern space to a file.
 - `q`: Quit command, immediately exits the script with the specified status.
+
+## Example:
+1. To replace all occurrences of "old" with "new" in a file:
+    
+    `sed 's/old/new/g' file.txt`
+
+2. To delete lines containing a specific pattern from a file:
+
+    `sed '/pattern/d' file.txt`
+
