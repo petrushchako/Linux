@@ -37,3 +37,15 @@
 
     `sed '/pattern/d' file.txt`
 
+
+
+## Usage:
+1. Specify editing operations using sed commands or scripts.
+2. Provide input text from standard input or files.
+3. Run the `sed` command, and review the output for the applied transformations.
+4. Optionally, use options to modify the behavior of the sed command.
+
+## Notes:
+- `sed` is a powerful tool for text manipulation, commonly used in scripting and automation tasks.
+- Understanding regular expressions is essential for effective use of sed.
+- Be cautious when using sed with large files or complex scripts, as it may impact performance.
