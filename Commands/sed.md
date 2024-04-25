@@ -20,3 +20,10 @@
 - `--version`: Display version information and exit.
 - `--help`: Display usage information and exit.
 
+## Commands:
+- `s`: Substitute command, replaces occurrences of a pattern with a replacement.
+- `p`: Print command, prints the current pattern space.
+- `d`: Delete command, deletes the current pattern space and starts the next cycle.
+- `g`: Global command, applies the command to all matches in the pattern space.
+- `w`: Write command, writes the pattern space to a file.
+- `q`: Quit command, immediately exits the script with the specified status.
