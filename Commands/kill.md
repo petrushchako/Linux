@@ -23,4 +23,24 @@
 - `SIGSTOP (19)`: Stop signal, suspends the process.
 - `SIGCONT (18)`: Continue signal, resumes the execution of a stopped process.
 
+## Example:
+1. To terminate a process with a specific PID:   
+    `kill 1234`
+2. To send a different signal to a process:
+    `kill -s SIGTERM 1234`
+
+
+
+## Usage:
+1. Specify the PID or PIDs of the processes to be signaled.
+2. Optionally, specify the signal to send using the `-s` option.
+3. Run the `kill` command, and the specified signal will be sent to the target processes.
+
+## Notes:
+- The default signal sent by `kill` is `SIGTERM`, which allows processes to perform cleanup operations before terminating.
+- Use caution when sending signals, especially `SIGKILL`, as it does not allow processes to perform cleanup and may lead to data loss or corruption.
+- Only processes owned by the current user or those running with the same effective user ID can be signaled.
+
+
+
 
