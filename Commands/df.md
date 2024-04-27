@@ -24,3 +24,23 @@
 - `Available`: Available space in the file system.
 - `Use%`: Percentage of used space.
 - `Mounted on`: Mount point of the file system.
+
+## Example:
+1. To display disk space usage for all file systems in human-readable format:
+
+    `df -h`
+2. To display disk space usage for a specific file system type:
+
+    `df -t ext4`
+
+
+## Usage:
+1. Run the `df` command without any options to display disk space usage for all mounted file systems.
+2. Use options to filter and customize the output according to specific requirements.
+3. Review the output to gather information about disk space usage, including total size, used space, available space, and usage percentages.
+4. Combine `df` with other commands or shell scripting for monitoring disk space usage and managing storage resources.
+
+## Notes:
+- The output of `df` may vary depending on the operating system and version.
+- Some options may not be available on all systems or may behave differently across different Unix-like systems.
+- File systems that are not mounted are not displayed by default. Use the `-a` option to include them in the output.
