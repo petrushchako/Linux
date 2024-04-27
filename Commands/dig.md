@@ -29,3 +29,12 @@
 - `+noquestion`: Suppress the display of the question section of the query.
 - `+noadditional`: Suppress the display of additional section of the response.
 
+## Example:
+1. To query the A records for a domain:
+
+    `dig example.com A`
+
+2. To perform a reverse DNS lookup for an IP address:
+
+    `dig -x 8.8.8.8`
+
