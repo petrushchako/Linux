@@ -38,3 +38,14 @@
 
     `dig -x 8.8.8.8`
 
+
+## Usage:
+1. Run the `dig` command followed by the domain name and optional query type to perform a DNS query.
+2. Use options to customize the query behavior, such as specifying the DNS server to query, enabling tracing, setting timeouts, and more.
+3. Review the output to obtain information about DNS records associated with the domain name.
+4. Combine `dig` with other commands or shell scripting for advanced DNS-related tasks.
+
+## Notes:
+- `dig` is a versatile tool for DNS troubleshooting, diagnostics, and querying.
+- The output of `dig` provides detailed information about DNS records, including their type, value, TTL (time to live), and authoritative servers.
+- DNS responses may vary based on the DNS server queried and the network configuration.
