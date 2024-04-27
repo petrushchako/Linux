@@ -24,3 +24,13 @@
 - `TTY`: Terminal associated with the process.
 - `TIME`: CPU time used by the process.
 - `CMD`: Command or command line used to launch the process.
+
+## Example:
+1. To display information about all processes:
+
+    `ps -e`
+
+2. To display detailed information about processes owned by a specific user:
+
+    `ps -u username -l`
+
