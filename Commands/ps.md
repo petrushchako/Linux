@@ -34,3 +34,14 @@
 
     `ps -u username -l`
 
+
+## Usage:
+1. Run the `ps` command without any options to display information about processes owned by the current user.
+2. Use options to filter and customize the output according to specific requirements.
+3. Review the output to gather information about running processes, including their PIDs, resource usage, and associated terminals.
+4. Combine `ps` with other commands or shell scripting for advanced process management and monitoring tasks.
+
+## Notes:
+- The output of `ps` may vary depending on the operating system and version.
+- Some options may not be available on all systems or may behave differently across different Unix-like systems.
+- Refer to the manual page (`man ps`) for more detailed information about available options and output formats.
