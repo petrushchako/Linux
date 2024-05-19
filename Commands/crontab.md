@@ -54,3 +54,39 @@ Only the root user or the owner of the crontab file can use UserName following t
 
     If neither the cron.allow nor the cron.deny file exists, only someone with root user authority can submit a job with the crontab command.
 
+<br>
+
+### The crontab File Entry Format
+
+A crontab file contains entries for each cron job. Entries are separated by newline characters. Each crontab file entry contains six fields separated by spaces or tabs in the following form:
+
+  `minute  hour  day_of_month  month  weekday  command`
+
+These fields accept the following values:
+|Item|Description|
+|---|---|
+|minute|0 through 59
+|hour|	0 through 23
+|day_of_month|	1 through 31
+|month|	1 through 12
+|weekday|	0 through 6 for Sunday through Saturday
+|command|	a shell command
+
+You must specify a value for each field. Except for the command field, these fields can contain the following:
+
+- A number in the specified range. To run a command in May, specify 5 in the month field.
+- Two numbers separated by a dash to indicate an inclusive range. To run a cron job on Tuesday through Friday, place 2-5 in the weekday field.
+- A list of numbers separated by commas. To run a command on the first and last day of January, you would specify 1,31 in the day_of_month field.
+- A combination of two numbers separated by a dash to indicate an inclusive range and a list of numbers separated by commas can be used in conjunction. To run a command on the first, tenth to sixteenth and last day of January, you would specify 1,10-16,31 in the day_of_month field. The above two points can also be used in combination.
+- An * (asterisk), meaning all allowed values. To run a job every hour, specify an asterisk in the hour field.
+
+<br>
+
+### Files
+
+|File|Description|
+|---|---|
+|`/var/adm/cron/FIFO`|A named pipe that sends messages to the cron daemon when new jobs are submitted with the crontab or at command.|
+|`/var/spool/cron/crontabs`|Specifies the crontab spool area.
+|`/var/adm/cron/cron.allow`|Specifies a list of users allowed access to the crontab command.|
+|`/var/adm/cron/cron.deny`|Specifies a list of users denied access to the crontab command.|
