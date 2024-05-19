@@ -90,3 +90,59 @@ You must specify a value for each field. Except for the command field, these fie
 |`/var/spool/cron/crontabs`|Specifies the crontab spool area.
 |`/var/adm/cron/cron.allow`|Specifies a list of users allowed access to the crontab command.|
 |`/var/adm/cron/cron.deny`|Specifies a list of users denied access to the crontab command.|
+
+<br><br>
+
+### Usage Examples
+
+1. To copy a file called mycronjobs into the `/var/spool/cron/crontabs` directory, enter the following:
+    ```sh
+    crontab mycronjobs
+    ```
+
+    The file will be copied as:
+
+    ```sh
+    /var/spool/cron/crontabs/<username>
+    ```
+
+    where <username> is your current user name.
+
+2. To write the time to the console every hour on the hour, enter:
+
+    ```sh
+    0 * * * * echo The hour is `date` . 
+    >/dev/console
+    ```
+
+3. To run the calendar command at 6:30 a.m. every Monday, Wednesday, and Friday, enter:
+
+    ```sh
+    30 6 * * 1,3,5 /usr/bin/calendar
+    ```
+
+4. To run the calendar command every day of the year at 6:30, enter the following:
+
+    ```sh
+    30 6 * * * /usr/bin/calendar
+    ```
+
+5. To run a script called maintenance every day at midnight in August, enter the following:
+  
+    ```sh
+    0 0 * 8 * /u/harry/bin/maintenance
+    ```
+
+6. To define text for the standard input to a command, enter:
+  
+    ```sh
+    0 16 * 12 5 /usr/sbin/wall%HAPPY HOLIDAY!%Remember to turn in your time card.
+    ```
+
+    The text following the % (percent sign) defines the standard input to the wall command as:
+  
+    ```txt
+    HAPPY HOLIDAY!
+  
+    Remember to turn in your time card.
+    ```
