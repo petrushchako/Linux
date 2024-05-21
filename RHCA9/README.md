@@ -1,7 +1,7 @@
 # Red hat Certified Administrator 9
 
 ### Content at a Glance
-- Part 1
+- **Part 1**<br>[Perform Basic System Management Tasks](./PerformBasicSystemManagementTasks.md)
   1. Installing Red Hat Enterprise Linux
   2. Using Essential Tools
   3. Essential File Management Tools
@@ -11,7 +11,7 @@
   7. Permission Management
   8. Configuring Networking
   
-- Part 2
+- **Part 2**<br>[Operating Running Systems](./OperatingRunningSystems.md)
 
   9. Managing Software
   10. Managing Processes
@@ -21,14 +21,14 @@
   14. Manage Storage
   15. Manage Advanced Storage
 
-- Part 3
+- **Part 3**<br>[Performing Advanced System Administration Tasks](./PerformingAdvancedSystemAdministrationTasks.md)
 
   16. Basic Kernel Management
   17. Manage and Understand the Boot Procedure
   18. Essential Troubleshooting Skills
   19. An Introduction to Automation with Bash Shell Scripting
   
-- Part 4
+- **Part 4**<br>[Managing Network Services](./ManagingNetworkServices.md)
 
   20. Configuring SSH
   21. Manage Apache HTTP Services
