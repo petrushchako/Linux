@@ -19,7 +19,7 @@
   12. Scheduling Tasks
   13. Configuring Logging
   14. Manage Storage
-  15. Manage Advanced Storage
+  15. [Manage Advanced Storage](./2.OperatingRunningSystems.md#chapter-15manage-advanced-storage)
 
 - **Part 3**<br>[Performing Advanced System Administration Tasks](./3.PerformingAdvancedSystemAdministrationTasks.md)
 
