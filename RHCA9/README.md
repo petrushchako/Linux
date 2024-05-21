@@ -2,14 +2,14 @@
 
 ### Content at a Glance
 - **Part 1**<br>[Perform Basic System Management Tasks](./1.PerformBasicSystemManagementTasks.md)
-  1. Installing Red Hat Enterprise Linux
-  2. Using Essential Tools
-  3. Essential File Management Tools
-  4. Working with Text Files
-  5. Connecting to Red Hat Enterprise Linux 9
-  6. User and Group Management
-  7. Permission Management
-  8. Configuring Networking
+  1. [Installing Red Hat Enterprise Linux](./1.PerformBasicSystemManagementTasks.md#chapter-1installing-red-hat-enterprise-linux)
+  2. [Using Essential Tools](./1.PerformBasicSystemManagementTasks.md#chapter-2using-essential-tools)
+  3. [Essential File Management Tools](./1.PerformBasicSystemManagementTasks.md#chapter-3essential-file-management-tools)
+  4. [Working with Text Files](./1.PerformBasicSystemManagementTasks.md#chapter-4working-with-text-files)
+  5. [Connecting to Red Hat Enterprise Linux 9](./1.PerformBasicSystemManagementTasks.md#chapter-5connecting-to-red-hat-enterprise-linux-9)
+  6. [User and Group Management](./1.PerformBasicSystemManagementTasks.md#chapter-6user-and-group-management)
+  7. [Permission Management](./1.PerformBasicSystemManagementTasks.md#chapter-7permission-management)
+  8. [Configuring Networking](./1.PerformBasicSystemManagementTasks.md#chapter-8configuring-networking)
   
 - **Part 2**<br>[Operating Running Systems](./2.OperatingRunningSystems.md)
 
