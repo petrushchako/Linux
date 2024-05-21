@@ -28,4 +28,15 @@
   18. Essential Troubleshooting Skills
   19. An Introduction to Automation with Bash Shell Scripting
   
+- Part 4
 
+  20. Configuring SSH
+  21. Manage Apache HTTP Services
+  22. Manage SELinux
+  23. Configuring a Firewall
+  24. Accessing Network Storage
+  25. Configuring Time Services
+  26. Managing Containers
+  27. Final Preparation
+  28. Theoretical Pre-Assessment Exam
+   
