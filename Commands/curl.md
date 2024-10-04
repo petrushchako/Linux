@@ -183,22 +183,35 @@ To keep it simple, we’re going to make a lot of our requests to the same websi
         - **server: tsa_b** - This indicates the type of server handling the request, in this case, a specific Twitter server.
 
 
-18. Make any request to `https://httpbin.org/anything` and just set some nonsense headers (like `panda: elephant`)
+17. Make any request to `https://httpbin.org/anything` and just set some nonsense headers (like `panda: elephant`)
     ```sh
-    curl 
+    curl https://httpbin.org/anything -H "panda:elephant"
     ```
     
-19. Request `https://httpbin.org/status/404` and `https://httpbin.org/status/200`.<br>Request them again and get curl to show the response headers.
+18. Request `https://httpbin.org/status/404` and `https://httpbin.org/status/200`.<br>Request them again and get curl to show the response headers.
     ```sh
-    curl 
+    curl https://httpbin.org/status/404 -i
+    curl https://httpbin.org/status/200 -i
     ```
     
-20. Request `https://httpbin.org/anything` and set a `username` and `password` (with `-u username:password`)
+19. Request `https://httpbin.org/anything` and set a `username` and `password` (with `-u username:password`)
     ```sh
-    curl 
+    curl https://httpbin.org/anything -u userValue:passValue -i
     ```
     
-21. Download the Twitter homepage (`https://twitter.com`) in Spanish by setting the `Accept-Language: es-ES` header.
+20. Download the Twitter homepage (`https://twitter.com`) in Spanish by setting the `Accept-Language: es-ES` header.
     ```sh
-    curl 
+    curl -o twitter.html https://x.com -H "Accept-Language: es-ES"
+    # curl -s -H 'Accept-Language: es'  -XGET "http://www.google.com" -o google.html
     ```
+
+21. Make a request to the Stripe API with curl. (see `https://stripe.com/docs/development` for how, they give you a test API key). Try making exactly the same request to `https://httpbin.org/anything`.
+    
+    - **Request**:
+        ```sh
+        curl https://api.stripe.com/v1/charges -u sk_test_zzPhAh8sZkhmI4JDtzTNnhGl:
+        # The colon prevents curl from asking for a password.
+        ```
+    - **Explanation**:
+        - `https://api.stripe.com/v1/charges` : This is the URL for the Stripe API endpoint to create a charge.
+        - `-u sk_test_zzPhAh8sZkhmI4JDtzTNnhGl:` : This option is for basic authentication. It includes your test API key (replace this with your actual test API key). **The colon at the end is necessary to indicate that there is no password**.
