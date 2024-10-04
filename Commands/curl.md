@@ -94,32 +94,34 @@ To keep it simple, we’re going to make a lot of our requests to the same websi
     
 5. Request google’s `robots.txt` file (`www.google.com/robots.txt`)
     ```sh
-    curl 
+    curl -O https://www.google.com/robots.txt
     ```
     
 6. Make a `GET` request to `https://httpbin.org/anything` and set the header `User-Agent: elephant`.
     ```sh
-    curl 
+    curl https://httpbin.org/anything -H "User-Agent: elephant"
+    # curl https://httpbin.org/anything -H "User-Agent: elephant" -H "Authorization: Bearer token"
     ```
     
 7. Make a `DELETE` request to `https://httpbin.org/anything`
     ```sh
-    curl 
+    curl -X DELETE https://httpbin.org/anything
     ```
     
 8. Request `https://httpbin.org/anything` and also **get the response headers**
     ```sh
-    curl 
+    curl https://httpbin.org/anything --include
+    curl https://httpbin.org/anything -i
     ```
     
 9. Make a `POST` request to `https://httpbin.org/anything` with the JSON body `{"value": "panda"}`
     ```sh
-    curl 
+    curl -X POST https://httpbin.org/anything --json '{"value":"panda"}'
     ```
     
 10. Make the same `POST` request as the previous exercise, but set the `Content-Type` header to `application/json` (because `POST` requests need to have a content type that matches their body).<br>Look at the json field in the response to see the difference from the previous one.
     ```sh
-    curl 
+    curl -X POST https://httpbin.org/anything -H "Content-Type: application/json" -d '{"value":"panda"}'
     ```
     
 11. Make a `GET` request to `https://httpbin.org/anything` and set the header `Accept-Encoding: gzip` (what happens? why?)
