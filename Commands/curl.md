@@ -126,50 +126,79 @@ To keep it simple, we’re going to make a lot of our requests to the same websi
     
 11. Make a `GET` request to `https://httpbin.org/anything` and set the header `Accept-Encoding: gzip` (what happens? why?)
     ```sh
-    curl 
+    curl https://httpbin.org/anything -H "Accept-Encoding: gzip"
     ```
-    
+    > This makes a `GET` request to `https://httpbin.org/anything` and sets the `Accept-Encoding: gzip` header, which asks the server to compress the response using `gzip`. If the server supports it, you'll get a gzipped response, which you can decompress if needed.<br>To see the raw response, you can add the `--verbose` (`-v`) flag    
+
+
 12. Put a bunch of a JSON in a file and then make a `POST` request to `https://httpbin.org/anything` with the **JSON in that file as the body**
     ```sh
-    curl 
+    curl -X POST https://httpbin.org/anything -H "Content-Type: application/json" -d @file.json
     ```
     
 13. Make a request to `https://httpbin.org/image` and set the header `Accept: image/png`.<br>Save the output to a PNG file and open the file in an image viewer. Try the same thing with different Accept: headers.
     ```sh
-    curl 
+    curl -X GET https://httpbin.org/image -H "Accept: image/png" -o img.png
     ```
     
 14. Make a `PUT` request to `https://httpbin.org/anything`
     ```sh
-    curl 
+    curl -X PUT https://httpbin.org/anything
+    # curl -X PUT https://httpbin.org/anything -d "some data"
     ```
     
 15. Request `https://httpbin.org/image/jpeg`, save it to a file, and open that file in your image editor.
     ```sh
-    curl 
+    curl -o img.jpeg https://httpbin.org/image/jpeg
     ```
     
 16. Request `https://www.twitter.com`.<br>You’ll get an empty response. Get curl to show you the response headers too, and try to figure out why the response was empty.
+    - **Request**
+        ```sh
+        curl -i https://www.twitter.com
+        ```
+    
+    - **Response**
+        ```sh
+        perf: 7402827104
+        location: https://twitter.com/
+        cache-control: no-cache, no-store, max-age=0
+        content-length: 0
+        x-transaction-id: 8eb68999658fc76e
+        x-response-time: 1
+        x-connection-hash: 074814dad34f5c7e5ccd6e69cd0d72fb54e2185cec888cf7ba304b65c5d83213
+        date: Fri, 04 Oct 2024 11:57:52 GMT
+        server: tsa_b
+        ```
+
+    - **Explanation**
+        - **perf: 7402827104** - This may represent performance metrics specific to Twitter's backend.
+        - **location: https://twitter.com/** - This indicates the URL being accessed, which is the homepage of Twitter.
+        - **cache-control: no-cache, no-store, max-age=0** - This header indicates that the response should not be cached.
+        - **content-length: 0** - This indicates that there is no content in the response body (which is common for redirect responses).
+        - **x-transaction-id: 8eb68999658fc76e** - A unique identifier for the transaction, useful for debugging.
+        - **x-response-time: 1** - This indicates that the response time was 1 millisecond.
+        - **x-connection-hash: 074814dad34f5c7e5ccd6e69cd0d72fb54e2185cec888cf7ba304b65c5d83213** - This may be a hash for the connection, possibly for load balancing or routing purposes.
+        - **date: Fri, 04 Oct 2024 11:57:52 GMT** - The date and time when the response was generated.
+        - **server: tsa_b** - This indicates the type of server handling the request, in this case, a specific Twitter server.
+
+
+18. Make any request to `https://httpbin.org/anything` and just set some nonsense headers (like `panda: elephant`)
     ```sh
     curl 
     ```
     
-17. Make any request to `https://httpbin.org/anything` and just set some nonsense headers (like `panda: elephant`)
+19. Request `https://httpbin.org/status/404` and `https://httpbin.org/status/200`.<br>Request them again and get curl to show the response headers.
     ```sh
     curl 
     ```
     
-18. Request `https://httpbin.org/status/404` and `https://httpbin.org/status/200`.<br>Request them again and get curl to show the response headers.
+20. Request `https://httpbin.org/anything` and set a `username` and `password` (with `-u username:password`)
     ```sh
     curl 
     ```
     
-19. Request `https://httpbin.org/anything` and set a `username` and `password` (with `-u username:password`)
-    ```sh
-    curl 
-    ```
-    
-20. Download the Twitter homepage (`https://twitter.com`) in Spanish by setting the `Accept-Language: es-ES` header.
+21. Download the Twitter homepage (`https://twitter.com`) in Spanish by setting the `Accept-Language: es-ES` header.
     ```sh
     curl 
     ```
