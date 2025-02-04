@@ -1,7 +1,7 @@
 # `fsck`
 
 ## Description:
-fsck is a command-line utility used to check and repair file systems on Unix-like operating systems. It performs a consistency check on the file system and attempts to fix any errors found.
+The `fsck` (**file system consistency check**) command is used to check and repair file system errors. It performs a consistency check on the file system and attempts to fix any errors found.
 
 ## Syntax:
 `fsck [options] [filesystem...]`
