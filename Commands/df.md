@@ -1,8 +1,7 @@
 # `df`
 
 ## Description:
-`df` is a command-line utility used to display information about disk space usage on Unix-like operating systems. It provides information about file system disk space usage, including total size, used space, available space, and usage percentages.
-
+The `df` (**disk free**) command in Linux is used to display information about the available and used disk space on file systems. It provides details such as the total size, used space, available space, and mount points of file systems.
 ## Syntax:
 `df [options] [filesystem...]`
 
