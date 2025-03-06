@@ -88,3 +88,30 @@ This will:
 - Run the commands inside the here document (you can have multiple lines)
 Note: Use `\$` to **escape `$`** if you want to pass `$` literally.
 
+
+## Useful Use Case - Writing System Config Files
+### Writing to a Systemd Service File
+```bash
+cat <<EOF | sudo tee /etc/systemd/system/myapp.service
+[Unit]
+Description=My Custom Application
+
+[Service]
+ExecStart=/usr/local/bin/myapp
+
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+This helps automate writing systemd service files during deployment.
+
+## Notes
+- `EOF` is **not a special keyword** — you can use any unique word, like `END` or `DATA`.
+- Be careful about **indentation** if you're using it inside functions — the marker must start at the **beginning of the line**.
+
+### Summary Table
+
+| Marker Syntax | Variables Expand | Typical Use Case |
+|---|---|---|
+| `<<EOF` | Yes | Templates with variables |
+| `<<'EOF'` | No | Documentation, templates with `$` symbols |
