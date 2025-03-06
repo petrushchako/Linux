@@ -73,3 +73,18 @@ User: $USERNAME
 Server: $SERVER
 This will not expand variables.
 ```
+
+## Using Here Document with SSH (Remote Commands)
+### Example
+```bash
+ssh user@remote-server <<EOF
+echo "Hello from \$HOSTNAME"
+df -h
+EOF
+```
+
+This will:
+- SSH into `remote-server`
+- Run the commands inside the here document (you can have multiple lines)
+Note: Use `\$` to **escape `$`** if you want to pass `$` literally.
+
