@@ -33,3 +33,43 @@ The `EOF` is just a marker — you can replace it with any other word, but `EOF`
 This is a multi-line text block.
 It will be saved into myfile.txt.
 ```
+
+## Using Variables Inside Here Document
+### Example
+```bash
+USERNAME="cloudguru"
+SERVER="prod-server"
+
+cat <<EOF > config.txt
+User: $USERNAME
+Server: $SERVER
+Welcome $USERNAME, you are connected to $SERVER.
+EOF
+```
+
+### Result in `config.txt`
+```
+User: cloudguru
+Server: prod-server
+Welcome cloudguru, you are connected to prod-server.
+```
+In this case, **variables are expanded (interpreted)** because we used an **unquoted `EOF`**.
+
+## Preventing Variable Expansion
+If you want to **preserve variables as plain text** (for example, to show in documentation or templates), **quote the marker** like this:
+
+### Example
+```bash
+cat <<'EOF' > literal.txt
+User: $USERNAME
+Server: $SERVER
+This will not expand variables.
+EOF
+```
+
+### Result in `literal.txt`
+```
+User: $USERNAME
+Server: $SERVER
+This will not expand variables.
+```
