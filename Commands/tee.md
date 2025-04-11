@@ -38,3 +38,17 @@ tee [OPTION]... [FILE]...
   ./deploy.sh | tee deploy.log
   ```
   Logs script output to `deploy.log` and prints it live to the terminal.
+
+<br>
+
+### Options
+| Option | Description |
+|--------|-------------|
+| `-a`, `--append` | Append to the given file(s), do not overwrite |
+| `-i`, `--ignore-interrupts` | Ignore interrupt signals |
+| `--help` | Display help and exit |
+| `--version` | Show version information and exit |
+
+### Notes
+- `tee` is particularly useful in automated deployments, backups, or CI/CD pipelines where you want to monitor output in real-time and archive logs.
+- It is a standard utility available in almost all Unix-like operating systems.
