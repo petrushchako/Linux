@@ -101,3 +101,76 @@ Hosts/Net: 65534  Class A
 ```
 
 
+
+## CIDR Calculations Provided by `ipcalc`
+`ipcalc` can convert or compute:
+
+### Netmask to Prefix
+```bash
+ipcalc 255.255.255.128
+```
+
+Outputs:
+
+```
+Netmask: 255.255.255.128 = 25
+```
+
+### Prefix to Netmask
+
+```bash
+ipcalc /20
+```
+
+Outputs:
+
+```
+Netmask: 255.255.240.0
+```
+
+### Multiple Formats
+```bash
+ipcalc 192.168.0.1/28
+```
+
+
+
+## Displaying Binary Output
+Use the `-b` flag:
+
+```bash
+ipcalc -b 192.168.1.5/30
+```
+
+Output includes binary forms:
+
+```
+Address:   192.168.1.5        11000000.10101000.00000001.00000101
+Netmask:   255.255.255.252 = 30
+Wildcard:  0.0.0.3
+Network:   192.168.1.4/30
+Broadcast: 192.168.1.7
+```
+
+
+
+
+## Using `ipcalc` in Scripts
+Example Bash snippet:
+
+```bash
+network=$(ipcalc -n 192.168.32.61/26 | awk -F' ' '/Network/ {print $2}')
+broadcast=$(ipcalc -b 192.168.32.61/26 | awk -F' ' '/Broadcast/ {print $2}')
+
+echo "Network: $network"
+echo "Broadcast: $broadcast"
+```
+
+
+## Why `ipcalc` Is Useful for DevOps/SRE
+* Determining subnets in infrastructure automation
+* Validating IP ranges during provisioning
+* Converting CIDR → netmask in Terraform/Ansible scripts
+* Debugging network segmentation issues
+* Creating firewall/ACL rules
+* Educating yourself on subnet boundaries
