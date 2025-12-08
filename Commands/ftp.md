@@ -1,6 +1,6 @@
 # `ftp`
 
-## FTP (File Transfer Protocol) - Legacy & Unencrypted ⚠️
+## FTP (File Transfer Protocol) - Legacy & Unencrypted
 
 **FTP** is an older protocol that transmits all data, including credentials and files, in **plain text** (unencrypted). Use SFTP instead unless specifically required.
 

@@ -1,32 +1,33 @@
-# `ftp`
+# `sftp`
 
-## FTP (File Transfer Protocol) - Legacy & Unencrypted ⚠️
+## SFTP (Secure File Transfer Protocol) - Recommended
 
-**FTP** is an older protocol that transmits all data, including credentials and files, in **plain text** (unencrypted). Use SFTP instead unless specifically required.
+**SFTP** is the secure method, using the **SSH** protocol to encrypt both commands and data. It is the preferred method for transferring files.
 
 ### Establishing the Connection
 
-To connect, you use the `ftp` command.
+To connect, you use the `sftp` command, which is usually pre-installed.
 
 ```bash
-ftp remote_host_ip_or_domain
-# Example: ftp 192.168.1.5
+sftp username@remote_host_ip_or_domain
+# Example: sftp john@192.168.1.10
+# Example: sftp jane@sftp.example.com
 ```
 
-The system will prompt you for the `username` and then the `password`. Once connected, the prompt changes to `ftp>`.
+You will be prompted for the user's password. Once connected, the prompt changes to `sftp>`.
 
-### Core FTP Commands
+### Core SFTP Commands
 
 | Command | Description | Example |
 | :--- | :--- | :--- |
-| `ls` or `dir` | Lists files and directories on the **remote** server. | `ftp> ls` |
-| `pwd` | Prints the **W**orking **D**irectory on the **remote** server. | `ftp> pwd` |
-| `cd` | Change directory on the **remote** server. | `ftp> cd public_files` |
-| `lcd` | Change directory on the **local** machine. | `ftp> lcd ~/downloads` |
-| `get` | **Downloads** a single file from the remote server. | `ftp> get remote_file.pdf` |
-| `mget` | Downloads **M**ultiple files (supports wildcards). | `ftp> mget *.jpg` |
-| `put` | **Uploads** a single file to the remote server. | `ftp> put local_file.html` |
-| `mput` | Uploads **M**ultiple files (supports wildcards). | `ftp> mput *.bak` |
-| `binary` | Sets transfer mode to **binary** (required for non-text files like ZIPs, EXEs). | `ftp> binary` |
-| `ascii` | Sets transfer mode to **ASCII** (for text-only files). | `ftp> ascii` |
-| `quit` or `bye` | Closes the connection and exits the FTP prompt. | `ftp> quit` |
+| `pwd` | Prints the **W**orking **D**irectory on the **remote** server. | `sftp> pwd` |
+| `lpwd` | Prints the **W**orking **D**irectory on the **local** machine. | `sftp> lpwd` |
+| `ls` | Lists files and directories on the **remote** server. | `sftp> ls` |
+| `lls` | Lists files and directories on the **local** machine. | `sftp> lls` |
+| `cd` | Change directory on the **remote** server. | `sftp> cd /var/www/html` |
+| `lcd` | Change directory on the **local** machine. | `sftp> lcd ~/Desktop/reports` |
+| `get` | **Downloads** a file from the remote server to the local machine. | `sftp> get remote_file.txt` |
+| `put` | **Uploads** a file from the local machine to the remote server. | `sftp> put local_file.zip` |
+| `mget` | Downloads **M**ultiple files (supports wildcards). | `sftp> mget *.log` |
+| `mput` | Uploads **M**ultiple files (supports wildcards). | `sftp> mput *.config` |
+| `exit` or `bye` | Closes the connection and exits the SFTP prompt. | `sftp> bye` |
