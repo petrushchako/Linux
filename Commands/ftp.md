@@ -31,3 +31,47 @@ The system will prompt you for the `username` and then the `password`. Once conn
 | `ascii` | Sets transfer mode to **ASCII** (for text-only files). | `ftp> ascii` |
 | `quit` or `bye` | Closes the connection and exits the FTP prompt. | `ftp> quit` |
 
+
+<hr>
+
+## Docker excercise
+
+### **1. Configure & Run the Server (vsftpd)**
+Use the `fauria/vsftpd` image, which is pre-configured for easy use. The command maps the control port (21) and a range for **Passive Mode** data transfer (21100-21110) to your host machine's loopback address (`127.0.0.1`).
+
+**Create Docker container**
+```bash
+mkdir -p ~/ftp_test_data
+docker run -d \
+  --name ftp-exercise-server \
+  -p 21:21 -p 21100-21110:21100-21110 \
+  -e FTP_USER=alex \
+  -e FTP_PASS=alex123 \
+  -e PASV_ADDRESS=127.0.0.1 \
+  -e PASV_MIN_PORT=21100 \
+  -e PASV_MAX_PORT=21110 \
+  -v ~/ftp_test_data:/home/vsftpd \
+  fauria/vsftpd
+```
+
+| Credentials | Port | Host Address |
+| :--- | :--- | :--- |
+| **Username** | `alex` | `127.0.0.1` |
+| **Password** | `alex123` | |
+
+### **2. Practice the Transfer Commands**
+Use the hostname `127.0.0.1` and the credentials above to test your file transfer commands.
+
+| Command | Action |
+| :--- | :--- |
+| `sftp alex@127.0.0.1` | **Connect** securely (Recommended). |
+| `ftp 127.0.0.1` | **Connect** using unencrypted FTP (If available). |
+| `put local_file.txt` | **Upload** a file from your local machine. |
+| `get remote_file.zip` | **Download** a file from the server. |
+| `bye` or `exit` | **Disconnect** and close the prompt. |
+
+### **3. Cleanup (Stop & Remove)**
+```bash
+docker stop ftp-exercise-server
+docker rm ftp-exercise-server
+```
