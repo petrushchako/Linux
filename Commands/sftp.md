@@ -31,3 +31,32 @@ You will be prompted for the user's password. Once connected, the prompt changes
 | `mget` | Downloads **M**ultiple files (supports wildcards). | `sftp> mget *.log` |
 | `mput` | Uploads **M**ultiple files (supports wildcards). | `sftp> mput *.config` |
 | `exit` or `bye` | Closes the connection and exits the SFTP prompt. | `sftp> bye` |
+
+
+<br>
+
+
+## Docker excercise
+This exercise shows how to configure an isolated **SFTP** server instance locally using Docker, allowing you to practice the secure `sftp` and `scp` commands. We will use a dedicated SSH server image for maximum compatibility with the SFTP protocol.
+
+### **1. Configure & Run the Server (SSH/SFTP)**
+
+Use the `panubo/sshd` image and map the standard SSH port **22** to port **2222** on your local machine to avoid conflicts with your host's primary SSH daemon.
+
+**Required Command:**
+
+```bash
+mkdir -p ~/sftp_test_data
+docker run -d \
+  --name sftp-exercise-server \
+  -p 2222:22 \
+  -e SSH_USERS="alex:alex123:1000" \
+  -v ~/sftp_test_data:/home/devuser/upload \
+  panubo/sshd
+```
+
+| Credentials | Port | Host Address |
+| :--- | :--- | :--- |
+| **Username** | `alex` | `127.0.0.1` |
+| **Password** | `alex123` | |
+| **Local Port** | `2222` | |
