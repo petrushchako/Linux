@@ -36,6 +36,8 @@ The system will prompt you for the `username` and then the `password`. Once conn
 
 ## Docker excercise
 
+> You may need to install `inetutils` on MacOS with `brew install inetutils`
+
 ### **1. Configure & Run the Server (vsftpd)**
 Use the `fauria/vsftpd` image, which is pre-configured for easy use. The command maps the control port (21) and a range for **Passive Mode** data transfer (21100-21110) to your host machine's loopback address (`127.0.0.1`).
 
