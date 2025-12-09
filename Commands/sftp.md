@@ -60,3 +60,40 @@ docker run -d \
 | **Username** | `alex` | `127.0.0.1` |
 | **Password** | `alex123` | |
 | **Local Port** | `2222` | |
+
+### **2. Practice the Secure Transfer Commands**
+Use the hostname `127.0.0.1` and the specific local port (`-P 2222`) to test your secure file transfer commands.
+
+#### **A. Using the Interactive SFTP Client**
+
+```bash
+sftp -P 2222 alex@127.0.0.1
+```
+
+Once connected, practice commands like `put`, `get`, `ls`, and `bye`.
+
+```sftp
+sftp> ls upload
+sftp> put local_file.txt upload/
+sftp> get upload/remote_file.zip
+sftp> bye
+```
+
+#### **B. Using the Non-Interactive SCP Client**
+For quick, one-off transfers (no interactive prompt).
+
+**Upload (Local to Remote):**
+```bash
+scp -P 2222 local_file.txt alex@127.0.0.1:upload/
+```
+
+**Download (Remote to Local):**
+```bash
+scp -P 2222 alex@127.0.0.1:upload/remote_file.zip .
+```
+
+### **3. Cleanup (Stop & Remove)**
+```bash
+docker stop sftp-exercise-server
+docker rm sftp-exercise-server
+```
