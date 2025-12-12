@@ -29,3 +29,52 @@ telnet [hostname or IP address] [port]
   * **Successful:** You will see a message like `Connected to <host>. Escape character is '^]'.` You can now type commands directly to the listening service.
   * **Connection Refused:** The host is reachable, but nothing is listening on that specific port, or a host-level firewall is blocking it.
   * **Connection Timed Out:** The connection was blocked by a network firewall or the host is offline/unreachable.
+
+## 2. Interactive Commands
+
+Once you are successfully connected, you are in **Input Mode**. To enter the `telnet` **Command Mode**, press the **Escape Character**.
+
+| Command | Key Sequence | Description |
+| :--- | :--- | :--- |
+| **Escape** | **`Ctrl` + `]`** | Enters the `telnet>` prompt to execute internal commands. |
+| `quit` or `close` | (At `telnet>` prompt) | Closes the current connection and returns to the local terminal. |
+| `status` | (At `telnet>` prompt) | Displays the status of the connection (host, port, mode). |
+
+<br><br><hr>
+
+
+## Exercise: Testing Telnet with Docker (Robust Method)
+### **1. Configure & Run the Server (Ubuntu + Telnetd)**
+Start Ubuntu container and start telnetd daemon:
+```bash
+docker run -d \
+  --name telnet-test-server \
+  -p 2323:23 \
+  ubuntu /bin/bash -c "apt update && apt install -y telnetd && /usr/sbin/in.telnetd"
+```
+
+| Connection Detail | Value |
+| :--- | :--- |
+| **Host Address** | `127.0.0.1` (Your Localhost) |
+| **Port** | `2323` (Mapped from container port 23) |
+
+### **2. Practice the Connection**
+Now, use the `telnet` command with the local host and the mapped port.
+
+```bash
+telnet 127.0.0.1 2323
+```
+
+**Expected Interaction:**
+1.  The connection will be established.
+2.  The server may show a login prompt (depending on the Ubuntu environment configuration inside the image).
+3.  Type `Ctrl + ]` to enter the command prompt.
+4.  Type `quit` to close the connection.
+
+### **3. Cleanup (Stop & Remove)**
+Once your exercise is complete, always clean up the container:
+
+```bash
+docker stop telnet-test-server
+docker rm telnet-test-server
+```
